@@ -1,5 +1,7 @@
 package com.neilmao;
 
+import com.neilmao.bean.MailBean;
+
 /**
  * Created with IntelliJ IDEA.
  * User: neil
@@ -8,7 +10,5 @@ package com.neilmao;
  */
 public interface Mailer {
 
-    void prepare();
-
-    void send();
+    void initProps();
 }

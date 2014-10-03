@@ -1,5 +1,7 @@
 package com.neilmao.bean;
 
+import javax.mail.Address;
+
 /**
  * Created with IntelliJ IDEA.
  * User: neil
@@ -8,49 +10,34 @@ package com.neilmao.bean;
  */
 public class MailBean {
 
-    private String title;
+    public static final String USERNAME = "username";
+    public static final String PASSWORD = "password";
+
+    private String username;
+    private String password;
+    private String subject;
     private String content;
     private String charset;
-    private String sender;
-    private String receiver;
-    private int port;
-    private boolean authenticationRequired;
+    private Address sender;
+    private Address[] receivers;
 
     public MailBean() {
-        this.authenticationRequired = false;
-        this.port = 25;
         this.charset = "charset=UTF-8";
     }
 
-    public boolean isAuthenticationRequired() {
-        return authenticationRequired;
+    public Address[] getReceivers() {
+        return receivers;
     }
 
-    public void setAuthenticationRequired(boolean authenticationRequired) {
-        this.authenticationRequired = authenticationRequired;
+    public void setReceivers(Address[] receivers) {
+        this.receivers = receivers;
     }
 
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
-    public String getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(String receiver) {
-        this.receiver = receiver;
-    }
-
-    public String getSender() {
+    public Address getSender() {
         return sender;
     }
 
-    public void setSender(String sender) {
+    public void setSender(Address sender) {
         this.sender = sender;
     }
 
@@ -70,11 +57,27 @@ public class MailBean {
         this.content = content;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
